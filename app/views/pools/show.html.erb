@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @pool.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @pool.description %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @pool.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @pool.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @pool.state %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @pool.country %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @pool.zip %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @pool.phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_pool_path(@pool) %> |
+<%= link_to 'Back', pools_path %>

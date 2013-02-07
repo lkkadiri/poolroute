@@ -1,0 +1,37 @@
+<h1>Listing pools</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Zip</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pools.each do |pool| %>
+  <tr>
+    <td><%= pool.name %></td>
+    <td><%= pool.description %></td>
+    <td><%= pool.address %></td>
+    <td><%= pool.city %></td>
+    <td><%= pool.state %></td>
+    <td><%= pool.country %></td>
+    <td><%= pool.zip %></td>
+    <td><%= pool.phone %></td>
+    <td><%= link_to 'Show', pool %></td>
+    <td><%= link_to 'Edit', edit_pool_path(pool) %></td>
+    <td><%= link_to 'Destroy', pool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pool', new_pool_path %>
