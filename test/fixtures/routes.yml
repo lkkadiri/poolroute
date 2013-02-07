@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  location: MyString
+  pool_count: 1
+  income: MyString
+  sale_price: MyString
+  status: false
+
+two:
+  location: MyString
+  pool_count: 1
+  income: MyString
+  sale_price: MyString
+  status: false

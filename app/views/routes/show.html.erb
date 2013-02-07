@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Location:</b>
+  <%= @route.location %>
+</p>
+
+<p>
+  <b>Pool count:</b>
+  <%= @route.pool_count %>
+</p>
+
+<p>
+  <b>Income:</b>
+  <%= @route.income %>
+</p>
+
+<p>
+  <b>Sale price:</b>
+  <%= @route.sale_price %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @route.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Back', routes_path %>

@@ -1,4 +1,10 @@
 Poolroute::Application.routes.draw do
+  resources :statuses
+
+
+  resources :routes
+
+
   get "home/index"
 
   devise_for :users
