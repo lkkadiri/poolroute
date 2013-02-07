@@ -22,3 +22,7 @@ Migrate the Database and populate all the tables
 ```ruby
 rake db:migrate
 ```
+Run the application
+```ruby
+rails s
+```
