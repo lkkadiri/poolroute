@@ -50,6 +50,14 @@
               <li><%= link_to "Pools", "/pools"  %></li>
               <li><%= link_to "Users", "/users"  %></li>
             </ul>
+			<p class="container-fluid pull-right">
+				  <% if user_signed_in? %>
+				    Signed in as <%= current_user.email %>. Not you?
+				    <%= link_to "Sign out", destroy_user_session_path, :class => "btn btn-danger",:method => :get %>
+				  <% else %>
+				    <%= link_to "Sign up", new_user_registration_path,:class => "btn btn-info" %> or <%= link_to "Sign In", new_user_session_path, :class => "btn btn-success" %>
+				  <% end %>
+			</p>  
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -57,16 +65,18 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">QuickLinks</li>
-              <li><%= link_to "Pools", "/pools"  %></li>
-              <li><%= link_to "Users", "/users"  %></li>
-              <li><%= link_to "Clients", "/users"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+		<% if user_signed_in? %>
+	        <div class="span3">
+	          <div class="well sidebar-nav">
+	            <ul class="nav nav-list">
+	              <li class="nav-header">QuickLinks</li>
+	              <li><%= link_to "Pools", "/pools"  %></li>
+	              <li><%= link_to "Users", "/users"  %></li>
+	              <li><%= link_to "Clients", "/users"  %></li>
+	            </ul>
+	          </div><!--/.well -->
+	        </div><!--/span-->
+		<% end %>
         <div class="span9">
           <%= bootstrap_flash %>
           <%= yield %>

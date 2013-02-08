@@ -1,4 +1,7 @@
 class PoolsController < ApplicationController
+  before_filter :authenticate_user!
+
+  
   # GET /pools
   # GET /pools.json
   def index
