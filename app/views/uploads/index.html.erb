@@ -1,0 +1,33 @@
+<h1>Listing uploads</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>File path</th>
+    <th>Type</th>
+    <th>Pool</th>
+    <th>Route</th>
+    <th>Organization</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @uploads.each do |upload| %>
+  <tr>
+    <td><%= upload.name %></td>
+    <td><%= upload.file_path %></td>
+    <td><%= upload.type %></td>
+    <td><%= upload.pool %></td>
+    <td><%= upload.route %></td>
+    <td><%= upload.organization %></td>
+    <td><%= link_to 'Show', upload %></td>
+    <td><%= link_to 'Edit', edit_upload_path(upload) %></td>
+    <td><%= link_to 'Destroy', upload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Upload', new_upload_path %>

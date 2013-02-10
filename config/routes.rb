@@ -1,4 +1,16 @@
 Poolroute::Application.routes.draw do
+  resources :uploads
+
+
+  resources :bids
+
+
+  resources :auctions
+
+
+  resources :organizations
+
+
   resources :statuses
 
 

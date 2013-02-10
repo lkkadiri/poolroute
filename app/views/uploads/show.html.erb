@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @upload.name %>
+</p>
+
+<p>
+  <b>File path:</b>
+  <%= @upload.file_path %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @upload.type %>
+</p>
+
+<p>
+  <b>Pool:</b>
+  <%= @upload.pool %>
+</p>
+
+<p>
+  <b>Route:</b>
+  <%= @upload.route %>
+</p>
+
+<p>
+  <b>Organization:</b>
+  <%= @upload.organization %>
+</p>
+
+
+<%= link_to 'Edit', edit_upload_path(@upload) %> |
+<%= link_to 'Back', uploads_path %>

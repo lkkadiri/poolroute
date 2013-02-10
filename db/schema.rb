@@ -11,7 +11,42 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130207193213) do
+ActiveRecord::Schema.define(:version => 20130210044640) do
+
+  create_table "auctions", :force => true do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "pool_id"
+    t.integer  "status_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "auctions", ["pool_id"], :name => "index_auctions_on_pool_id"
+  add_index "auctions", ["status_id"], :name => "index_auctions_on_status_id"
+
+  create_table "bids", :force => true do |t|
+    t.integer  "auction_id"
+    t.float    "amount"
+    t.datetime "bid_time"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "bids", ["auction_id"], :name => "index_bids_on_auction_id"
+
+  create_table "organizations", :force => true do |t|
+    t.integer  "name"
+    t.string   "email"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "website"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "pools", :force => true do |t|
     t.string   "name"
@@ -24,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20130207193213) do
     t.string   "phone"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
   end
 
   create_table "routes", :force => true do |t|
@@ -35,6 +71,28 @@ ActiveRecord::Schema.define(:version => 20130207193213) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "statuses", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "pool_id"
+  end
+
+  create_table "uploads", :force => true do |t|
+    t.string   "name"
+    t.string   "file_path"
+    t.string   "type"
+    t.integer  "pool_id"
+    t.integer  "route_id"
+    t.integer  "organization_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "uploads", ["organization_id"], :name => "index_uploads_on_organization_id"
+  add_index "uploads", ["pool_id"], :name => "index_uploads_on_pool_id"
+  add_index "uploads", ["route_id"], :name => "index_uploads_on_route_id"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
@@ -53,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20130207193213) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "organization_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
