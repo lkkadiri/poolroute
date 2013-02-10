@@ -26,3 +26,11 @@ Run the application
 ```ruby
 rails s
 ```
+
+## Contribute:
+
+* Fork the repo
+* Create your feature branch (`git checkout -b my-feature`)
+* Commit your changes (`git commit -am 'Add some feature'`)
+* Push to the branch (`git push origin my-feature`)
+* Create new Pull Request
