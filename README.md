@@ -27,7 +27,8 @@ rake db:migrate
 rails s
 ```
 
-## Contribute:
+## Contribution:
+To contribute to the poolroute project,
 
 * Fork the repo
 
