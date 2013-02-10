@@ -41,7 +41,6 @@ git commit -am 'Add some feature'
 ```
 
 * Push to the branch 
-
 ```ruby
 git push origin my-feature
 ```
