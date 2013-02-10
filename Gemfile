@@ -25,6 +25,11 @@ group :assets do
 end
 
 gem 'jquery-rails'
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
   # gem 'webrat'
