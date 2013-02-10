@@ -30,7 +30,20 @@ rails s
 ## Contribute:
 
 * Fork the repo
-* Create your feature branch (`git checkout -b my-feature`)
-* Commit your changes (`git commit -am 'Add some feature'`)
-* Push to the branch (`git push origin my-feature`)
+* Create your feature branch 
+```ruby 
+git checkout -b my-feature
+```
+
+* Commit your changes 
+```ruby
+git commit -am 'Add some feature'
+```
+
+* Push to the branch 
+
+```ruby
+git push origin my-feature
+```
+
 * Create new Pull Request
