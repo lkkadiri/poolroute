@@ -1,35 +1,49 @@
-<h1>Listing Pools</h1>
+<div class="page-header">
+  <h1>Pools</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Address</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Country</th>
-    <th>Zip</th>
-    <th>Phone</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+	  <tr>
+	    <th>Name</th>
+	    <th>Description</th>
+	    <th>Address</th>
+	    <th>City</th>
+	    <th>State</th>
+	    <th>Country</th>
+	    <th>Zip</th>
+	    <th>Phone</th>
+	    <th>Action</th>
+	  </tr>
+  </thead>
 
-<% @pools.each do |pool| %>
-  <tr>
-    <td><%= pool.name %></td>
-    <td><%= pool.description %></td>
-    <td><%= pool.address %></td>
-    <td><%= pool.city %></td>
-    <td><%= pool.state %></td>
-    <td><%= pool.country %></td>
-    <td><%= pool.zip %></td>
-    <td><%= pool.phone %></td>
-    <td><%= link_to 'Show', pool %></td>
-    <td><%= link_to 'Edit', edit_pool_path(pool) %></td>
-    <td><%= link_to 'Destroy', pool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <tbody>
+	<% @pools.each do |pool| %>
+	  <tr>
+	    <td><%= pool.name %></td>
+	    <td><%= pool.description %></td>
+	    <td><%= pool.address %></td>
+	    <td><%= pool.city %></td>
+	    <td><%= pool.state %></td>
+	    <td><%= pool.country %></td>
+	    <td><%= pool.zip %></td>
+	    <td><%= pool.phone %></td>
+		<td>
+          <div class="btn-group">
+            <a href="#" class="btn btn-success">Admin</a>
+            <a href="#" data-toggle="dropdown" class="btn btn-success dropdown-toggle"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Show', pool %></li>
+              <li><%= link_to 'Edit', edit_pool_path(pool) %></li>
+              <li><%= link_to 'Destroy', pool, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              <li class="divider"></li>
+              <li><a href="#">Cancel</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+		</td>
+	  </tr>
+	<% end %>
+  </tbody>
 </table>
 
 <br />

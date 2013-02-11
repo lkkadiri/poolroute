@@ -47,8 +47,13 @@
           <a class="brand" href="/">Poolroute</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
+              <li><%= link_to "Auction", "/auctions"  %></li>
+              <li><%= link_to "Bids", "/bids"  %></li>
               <li><%= link_to "Pools", "/pools"  %></li>
+              <li><%= link_to "Routes", "/routes"  %></li>
+              <li><%= link_to "Status", "/statuses"  %></li>
               <li><%= link_to "Users", "/users"  %></li>
+              <li><%= link_to "Organizations", "/organizations"  %></li>
             </ul>
 			<p class="container-fluid pull-right">
 				  <% if user_signed_in? %>
@@ -70,9 +75,10 @@
 	          <div class="well sidebar-nav">
 	            <ul class="nav nav-list">
 	              <li class="nav-header">QuickLinks</li>
+	              <li><%= link_to "Auction", "/auctions"  %></li>
+	              <li><%= link_to "Bids", "/bids"  %></li>
 	              <li><%= link_to "Pools", "/pools"  %></li>
-	              <li><%= link_to "Users", "/users"  %></li>
-	              <li><%= link_to "Clients", "/users"  %></li>
+	              <li><%= link_to "Routes", "/routes"  %></li>
 	            </ul>
 	          </div><!--/.well -->
 	        </div><!--/span-->

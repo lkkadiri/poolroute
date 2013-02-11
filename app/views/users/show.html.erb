@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>First name:</b>
-  <%= @user.first_name %>
-</p>
+ <div class="page-header">
+  <h1>User Information</h1>
+</div>
 
-<p>
-  <b>Last name:</b>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%= @user.website %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @user.phone %>
-</p>
-
-
+<table class="table table-bordered table-striped table-hover">
+  <tbody>
+	<tr>
+		<td><b>First name:</b></td><td><%= @user.first_name %></td>
+	</tr>
+	<tr>
+		<td><b>Last name:</b></td><td><%= @user.last_name %></td>
+	</tr>
+	<tr>
+		<td><b>Website:</b></td><td><%= @user.website %></td>
+	</tr>
+	<tr>
+		<td><b>Phone:</b></td><td><%= @user.phone %></td>
+	</tr>
+  </tbody>
+</table>
+<br />
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
